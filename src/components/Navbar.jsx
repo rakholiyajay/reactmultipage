@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { CgMenu, CgCloseR } from "react-icons/cg";
+import { useAuth0 } from "@auth0/auth0-react";
+import { Button } from "../styles/Button";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const { loginWithRedirect, isAuthenticated, logout, user } = useAuth0();
 
+  console.log("user", user);
   const Nav = styled.nav`
     .navbar-list {
       display: flex;
@@ -121,36 +125,72 @@ const Navbar = () => {
         <ul className="navbar-list">
           <li>
             <NavLink
+              style={{
+                marginTop: "20px",
+              }}
               className="navbar-link"
               onClick={() => setOpenMenu(false)}
-              to="/">
+              to="/"
+            >
               Home
             </NavLink>
           </li>
           <li>
             <NavLink
+              style={{
+                marginTop: "20px",
+              }}
               className="navbar-link"
               onClick={() => setOpenMenu(false)}
-              to="/about">
+              to="/about"
+            >
               About
             </NavLink>
           </li>
           <li>
             <NavLink
+              style={{
+                marginTop: "20px",
+              }}
               className="navbar-link"
               onClick={() => setOpenMenu(false)}
-              to="/service">
+              to="/service"
+            >
               Services
             </NavLink>
           </li>
           <li>
             <NavLink
+              style={{
+                marginTop: "20px",
+              }}
               className="navbar-link"
               onClick={() => setOpenMenu(false)}
-              to="/contact">
+              to="/contact"
+            >
               Contact
             </NavLink>
           </li>
+          {isAuthenticated && (
+            <li>
+              <p>{user.nickname}</p>
+            </li>
+          )}
+          {isAuthenticated ? (
+            <li>
+              <Button
+                onClick={() =>
+                  logout({ logoutParams: { returnTo: window.location.origin } })
+                }
+              >
+                Log Out
+              </Button>
+            </li>
+          ) : (
+            <li>
+              <Button onClick={() => loginWithRedirect()}>Log In</Button>
+            </li>
+          )}
         </ul>
         {/* //nav icon */}
         <div className="mobile-navbar-btn">

@@ -1,0 +1,33 @@
+.product-description {
+  display: flex;
+}
+
+.description {
+  flex: 1;
+}
+
+.photos {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.big-photo {
+  width: 100%;
+  height: auto;
+}
+
+.small-photos {
+  display: flex;
+}
+
+.small-photos img {
+  width: calc(25% - 10px); /* Adjust width and margin accordingly */
+  height: auto;
+  margin-right: 10px;
+  transition: transform 0.3s ease; /* Adding transition for zoom effect */
+}
+
+.small-photos img:hover {
+  transform: scale(1.1); /* Zoom out effect on hover */
+}

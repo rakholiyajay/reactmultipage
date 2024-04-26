@@ -10,6 +10,13 @@ import { GlobalStyle } from "./GlobalStyle";
 import Error from "./Error";
 import GoToTop from "./components/GoToTop";
 
+/*-----------Property----------*/
+import Property1 from "./components/Property1";
+import Property2 from "./components/Property2";
+import Property3 from "./components/Property3";
+
+import Form from "./components/Form";
+
 const App = () => {
   const theme = {
     colors: {
@@ -44,6 +51,12 @@ const App = () => {
           <Route path="/service" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Error />} />
+
+          <Route path="/property1" element={<Property1 />} />
+          <Route path="/property2" element={<Property2 />} />
+          <Route path="/property3" element={<Property3 />} />
+
+          <Route path="/form" element={<Form />} />
         </Routes>
 
         <Footer />

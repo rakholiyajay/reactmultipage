@@ -10,8 +10,8 @@ const Footer = () => {
       <section className="contact-short">
         <div className="grid grid-two-column">
           <div>
-            <h3>Ready to get started?</h3>
-            <h3>Talk to us today</h3>
+            <h3>Ready to buy your HOME?</h3>
+            <h3>Explore</h3>
           </div>
 
           <div className="contact-short-btn">
@@ -27,13 +27,13 @@ const Footer = () => {
       <footer>
         <div className="container grid grid-four-column">
           <div className="footer-about">
-            <h3>Thapa Technical</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            <h3>Urban Nest</h3>
+            <p>Revolutionarizing your homely experiences</p>
           </div>
 
           {/* 2nd column */}
           <div className="footer-subscribe">
-            <h3>Subscribe to get important updates</h3>
+            <h3>Feedbacks</h3>
             <form action="#">
               <input
                 type="email"
@@ -58,7 +58,8 @@ const Footer = () => {
               <div>
                 <a
                   href="https://www.youtube.com/channel/UCwfaAHy4zQUb2APNOGXUCCA"
-                  target="_blank">
+                  target="_blank"
+                >
                   <FaYoutube className="icons" />
                 </a>
               </div>
@@ -67,7 +68,7 @@ const Footer = () => {
 
           {/* 4th column  */}
           <div className="footer-contact">
-            <h3>Call Us</h3>
+            <h3>Contact Us</h3>
             <h3>+91 12345678978</h3>
           </div>
         </div>
@@ -77,7 +78,7 @@ const Footer = () => {
           <hr />
           <div className="container grid grid-two-column">
             <p>
-              @{new Date().getFullYear()} ThapaTechnical. All Rights Reserved
+              @{new Date().getFullYear()} Urban Nest all rights reserved.
             </p>
             <div>
               <p>PRIVACY POLICY</p>
